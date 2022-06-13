@@ -4,8 +4,11 @@
 `NetLibDemo`是一款基于Linux环境、主要使用C++写的网络库。  
 源自冯岳松大佬的 [30天自制C++服务器](https://github.com/yuesong-feng/30dayMakeCppServer) ，学习并手写了一遍后受益匪浅。本库主要源自其 [day14](https://github.com/yuesong-feng/30dayMakeCppServer/tree/main/code/day14) 及之前的代码，并按自己的习惯风格进行了仿写调整。原仓库里有关于服务器一步步搭建起来的思路与解释，搭配着源码更易理解。本仓库仅为了个人学习及总结，对部分知识点的理解并不一定准确，建议大家直接看原仓库。  
 
-该网络库涉及到的知识点：
-- epoll
+该网络库涉及到的知识点不限于：
+- socket基础
+- I/O多路复用之epoll
+- Reactor模式
+- 线程池
 
 # 如何编译
 进入`NetLibDemo`所在目录后，输入以下命令：  
@@ -43,6 +46,7 @@ NetLibDemo/build$ make single_client
 NetLibDemo/build$ ./bin/server
 NetLibDemo/build$ ./bin/single_client
 ```
+目前测试用的服务器只有简单的回声功能，可以在客户端和服务端输入字符串进行简单验证。
 # 环境说明
 为了更好地支持**工程化**，原库中涉及到了以下工具：
 - `CMake`
